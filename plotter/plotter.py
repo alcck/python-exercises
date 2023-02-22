@@ -2,10 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib as plt
 import chart_studio.plotly as pl
-import matplotlib.pyplot as plt
 import plotly.offline as po
 import cufflinks as cf
-
 
 po.init_notebook_mode(connected=True)
 cf.go_offline()
@@ -18,7 +16,6 @@ def createdata(data):
         df1 = pd.DataFrame(x, columns=['A', 'B', 'C', 'D', 'E'])
         print("Here is a visualization of your data.")
         print(df1.head())
-        return df1
 
     elif (data == 2):
         x = [0, 0, 0, 0, 0]
@@ -55,7 +52,6 @@ def createdata(data):
         df1 = pd.DataFrame([r1, r2, r3, r4], columns=x)
         print("Here is a visualization of your data.")
         print(df1)
-        return df1
 
     elif (data == 3):
         file = input(("Enter the name of file you wish to upload: \n"))
@@ -63,67 +59,74 @@ def createdata(data):
         df1 = pd.DataFrame(x)
         print("Here is a visualization of your data.")
         print(df1.head())
-        return df1
 
     else:
         print("Enter a valid number. \n")
 
-def plotter(plot,df1):
+    return df1
+
+
+def plotter(plot):
     if (plot == 1):
-        df1.iplot(kind="scatter")
+        finalplot = df1.iplot(kind="scatter")
     elif (plot == 2):
-        print(df1.iplot(kind="scatter", mode="markers", symbol="x", colorscale="paired"))
+        finalplot = df1.iplot(kind="scatter", mode="markers", symbol="x", colorscale="paired")
     elif (plot == 3):
-        print(df1.iplot(kind="bar"))
+        finalplot = df1.iplot(kind="bar")
     elif (plot == 4):
-        print(df1.iplot(kind="hist"))
+        finalplot = df1.iplot(kind="hist")
     elif (plot == 5):
-        print(df1.iplot(kind="box"))
+        finalplot = df1.iplot(kind="box")
     elif (plot == 6):
-        print(df1.iplot(kind="surface"))
+        finalplot = df1.iplot(kind="surface")
     else:
         print("Enter a valid number. \n")
+    return finalplot
 
-def plotter2(plot,df1):
-    col = int(input("Enter the number of columns you want to plot by selecting 1,2 or 3: \n"))
+
+def plotter2(plot):
+    col = input("Enter the number of columns you want to plot by selecting 1,2 or 3: \n")
+    col = int(col)
     if (col == 1):
         colm = input("Enter the columns you want to plot: \n")
         if (plot == 1):
-            print(df1[colm].iplot(kind="scatter"))
+            finalplot = df1[colm].iplot(kind="scatter")
         elif (plot == 2):
-            print(df1[colm].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired'))
+            finalplot = df1[colm].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired')
         elif (plot == 3):
-            print(df1[colm].iplot(kind="bar"))
+            finalplot = df1[colm].iplot(kind="bar")
         elif (plot == 4):
-            print(df1[colm].iplot(kind="hist"))
+            finalplot = df1[colm].iplot(kind="hist")
         elif (plot == 5):
-            print(df1[colm].iplot(kind="box"))
+            finalplot = df1[colm].iplot(kind="box")
         elif (plot == 6 or plot == 7):
             print("Bubble plot and surface plot requires more than one column argument.")
         else:
             print("Enter a valid number. \n")
+        return finalplot
 
     elif (col == 2):
         print("Enter the columns you want to plot: \n")
         x = input("First column: \n")
         y = input("Second column: \n")
         if (plot == 1):
-            print(df1[x, y].iplot(kind="scatter"))
+            finalplot = df1[[x, y]].iplot(kind="scatter")
         elif (plot == 2):
-            print(df1[x, y].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired'))
+            finalplot = df1[[x, y]].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired')
         elif (plot == 3):
-            print(df1[x, y].iplot(kind="bar"))
+            finalplot = df1[[x, y]].iplot(kind="bar")
         elif (plot == 4):
-            print(df1[x, y].iplot(kind="hist"))
+            finalplot = df1[[x, y]].iplot(kind="hist")
         elif (plot == 5):
-            print(df1[x, y].iplot(kind="box"))
+            finalplot = df1[[x, y]].iplot(kind="box")
         elif (plot == 6):
-            print(df1[x, y].iplot(kind="surface"))
+            finalplot = df1[[x, y]].iplot(kind="surface")
         elif (plot == 7):
             size = input("Please enter the size column for the bubble plot: \n")
-            print(df1.iplot(kind="bubble", x=x, y=y, size=size))
+            finalplot = df1.iplot(kind="bubble", x=x, y=y, size=size)
         else:
             print("Enter a valid number. \n")
+        return finalpoint
 
     elif (col == 3):
         print("Enter the columns you want to plot: \n")
@@ -131,27 +134,28 @@ def plotter2(plot,df1):
         y = input("Second column: \n")
         z = input("Third column: \n")
         if (plot == 1):
-            print(df1[x, y, z].iplot(kind="scatter"))
+            finalplot = df1[[x, y, z]].iplot(kind="scatter")
         elif (plot == 2):
-            print(df1[x, y, z].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired'))
+            finalplot = df1[[x, y, z]].iplot(kind="scatter", mode="markers", symbol="x", colorscale='paired')
         elif (plot == 3):
-            print(df1[x, y, z].iplot(kind="bar"))
+            finalplot = df1[[x, y, z]].iplot(kind="bar")
         elif (plot == 4):
-            print(df1[x, y, z].iplot(kind="hist"))
+            finalplot = df1[[x, y, z]].iplot(kind="hist")
         elif (plot == 5):
-            print(df1[x, y, z].iplot(kind="box"))
+            finalplot = df1[[x, y, z]].iplot(kind="box")
         elif (plot == 6):
-            print(df1[x, y].iplot(kind="surface"))
+            finalplot = df1[[x, y, z]].iplot(kind="surface")
         elif (plot == 7):
             size = input("Please enter the size column for the bubble plot: \n")
-            print(df1.iplot(kind="bubble", x=x, y=y, z=z, size=size))
+            finalplot = df1.iplot(kind="bubble", x=x, y=y, z=z, size=size)
         else:
             print("Enter a valid number. \n")
-
+        return finalplot
     else:
         print("Enter a valid number. \n")
 
-def main(cat,df1):
+
+def main(cat):
     if (cat == 1):
         print("Select the type of plot you need by writing 1-6: \n")
         print("1.Line plot")
@@ -161,7 +165,7 @@ def main(cat,df1):
         print("5.Box plot")
         print("6.Surface Plot")
         plot = int(input())
-        return plotter(plot,df1)
+        output = plotter(plot)
 
     if (cat == 2):
         print("Select the type of plot you need by writing 1-7: \n")
@@ -173,7 +177,7 @@ def main(cat,df1):
         print("6.Surface Plot")
         print("7.Bubble Plot")
         plot = int(input())
-        return plotter2(plot,df1)
+        output = plotter2(plot)
 
     else:
         print("Enter a valid number. \n")
@@ -190,4 +194,4 @@ df1 = createdata(data)
 
 cat = input("Press 1 to plot all columns or 2 to specify columns to plot: \n")
 cat = int(cat)
-main(cat,df1)
+main(cat)
