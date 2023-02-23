@@ -34,7 +34,7 @@ def hangman():
             turns = turns - 1
             if turns == 9:
                 print("9 turns left")
-                print(" ")
+                print("            ")
             if turns == 8:
                 print("8 turns left")
                 print("      o      ")
