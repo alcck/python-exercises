@@ -1,12 +1,15 @@
 import random
 
+
 def hangman():
-    word = random.choice(["batman", "claymore", "sniper","angel","cat","fisherman","farming", "simulation","computer","conscience"])
+    word = random.choice(
+        ["batman", "claymore", "sniper", "angel", "cat", "fisherman", "farming", "simulation", "computer",
+         "conscience"])
     validLetters = 'abcdefghijklmnoprstuwxyz'
     turns = 10
     guessesMade = ''
 
-    while len(word)>0:
+    while len(word) > 0:
         main = ""
         missed = 0
 
@@ -78,7 +81,6 @@ def hangman():
                 print("|    \o/     ")
                 print("|     |      ")
                 print("|____/ \     ")
-
 
 
 print("Try to guess the word in less than 10 attempts. ")
