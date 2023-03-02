@@ -1,17 +1,46 @@
 import tkinter
 from tkinter import *
+from functools import partial
 
 win = Tk()
+l1 = Label(win,text="First Number")
+l1.grid(row=1,column=0)
 
-l = Label(win,text='username')
-l.pack(side=LEFT)
+l2 = Label(win,text="Second Number")
+l2.grid(row=2,column=0)
 
-e = Entry(win)
-e.pack(side=RIGHT)
+label = Label(win)
+label.grid(row=6,column=2)
 
-t = Text(win)
-t.insert(INSERT,'hello')
-t.pack()
+x1 = StringVar()
+x2 = StringVar()
+
+e1 = Entry(win,textvariable=x1)
+e1.grid(row=1,column=2)
+e2 = Entry(win,textvariable=x2)
+e2.grid(row=2,column=2)
+
+def sum(label,x1,x2):
+    n1 = (x1.get())
+    n2 = (x2.get())
+    sum = int(n1) + int(n2)
+    label.config(text='sum is :%d'%sum)
+    return
+
+sum= partial(sum,label,x1,x2)
+button = Button(win,text = "Calculate", command=sum)
+button.grid(row=3,column=0)
+
+
+#l = Label(win,text='username')
+#l.pack(side=LEFT)
+
+#e = Entry(win)
+#e.pack(side=RIGHT)
+
+#t = Text(win)
+#t.insert(INSERT,'hello')
+#t.pack()
 
 #c1 = IntVar()
 #cb = Checkbutton(win, text='Music', offvalue=0, onvalue=1, height=5,  width=10, variable=c1)
