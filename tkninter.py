@@ -11,8 +11,10 @@ b = Button(win,text = 'click pls',command = hello)
 b.pack()
 
 
-
-
+#win.title("first")
+#top = Toplevel()
+#top.title('second')
+#win.mainloop()
 
 
 
