@@ -5,47 +5,66 @@ from tkinter import messagebox
 
 win = Tk()
 
+#S C R O L L  W I D G E T S
+
+#s = Scale(win)
+#s.pack()
+
+#sb = Spinbox(win,from_=0,to=10)
+#sb.pack()
+
+scrollbar = Scrollbar(win)
+scrollbar.pack(side=RIGHT,fill=Y)
+
+list = Listbox(win, yscrollcommand=scrollbar.set)
+
+for line in range(100):
+    list.insert(END,'This is line no ' + str(line))
+
+list.pack(side=LEFT,fill=BOTH)
+
+
 #M E N U S
 
-def nothing():
-    file = Toplevel(win)
-    button = Button(file,text='do nothing')
-    button.pack()
+#def nothing():
+    #file = Toplevel(win)
+    #button = Button(file,text='do nothing')
+    #button.pack()
 
-menubar = Menu(win)
-filemenu = Menu(menubar)
+#menubar = Menu(win)
+#filemenu = Menu(menubar)
 
-filemenu.add_command(label="New Window",command = nothing)
-filemenu.add_command(label="New File",command = nothing)
-filemenu.add_command(label="Open",command = nothing)
-filemenu.add_command(label="Close",command = nothing)
-filemenu.add_separator()
-filemenu.add_command(label="Save",command = nothing)
-filemenu.add_command(label="Save as",command = nothing)
-filemenu.add_separator()
-filemenu.add_command(label="Close tab",command = nothing)
-filemenu.add_separator()
-filemenu.add_command(label="Exit",command = win.quit)
+#filemenu.add_command(label="New Window",command = nothing)
+#filemenu.add_command(label="New File",command = nothing)
+#filemenu.add_command(label="Open",command = nothing)
+#filemenu.add_command(label="Close",command = nothing)
+#filemenu.add_separator()
+#filemenu.add_command(label="Save",command = nothing)
+#filemenu.add_command(label="Save as",command = nothing)
+#filemenu.add_separator()
+#filemenu.add_command(label="Close tab",command = nothing)
+#filemenu.add_separator()
+#filemenu.add_command(label="Exit",command = win.quit)
 
-menubar.add_cascade(label="File",menu = filemenu)
+#menubar.add_cascade(label="File",menu = filemenu)
 
-editmenu = Menu(menubar)
-filemenu = Menu(menubar)
+#editmenu = Menu(menubar)
+#filemenu = Menu(menubar)
 
-filemenu.add_command(label="Undo",command = nothing)
-filemenu.add_command(label="Redo",command = nothing)
-filemenu.add_separator()
-filemenu.add_command(label="Cut",command = nothing)
-filemenu.add_command(label="Copy",command = nothing)
-filemenu.add_command(label="Paste",command = nothing)
-filemenu.add_command(label="Select all",command = nothing)
-filemenu.add_separator()
-filemenu.add_command(label="Exit",command = win.quit)
+#filemenu.add_command(label="Undo",command = nothing)
+#filemenu.add_command(label="Redo",command = nothing)
+#filemenu.add_separator()
+#filemenu.add_command(label="Cut",command = nothing)
+#filemenu.add_command(label="Copy",command = nothing)
+#filemenu.add_command(label="Paste",command = nothing)
+#filemenu.add_command(label="Select all",command = nothing)
+#filemenu.add_separator()
+#filemenu.add_command(label="Exit",command = win.quit)
 
-menubar.add_cascade(label="Edit",menu = filemenu)
+#menubar.add_cascade(label="Edit",menu = filemenu)
 
 
-win.config(menu = menubar)
+#win.config(menu = menubar)
 
 #mb = Menubutton(win,text='file')
 #mb.grid()
