@@ -5,10 +5,85 @@ from tkinter import messagebox
 
 win = Tk()
 
-def hello():
-    messagebox.showinfo('from computer','hey there!')
-b = Button(win,text = 'click pls',command = hello)
-b.pack()
+#M E N U S
+
+def nothing():
+    file = Toplevel(win)
+    button = Button(file,text='do nothing')
+    button.pack()
+
+menubar = Menu(win)
+filemenu = Menu(menubar)
+
+filemenu.add_command(label="New Window",command = nothing)
+filemenu.add_command(label="New File",command = nothing)
+filemenu.add_command(label="Open",command = nothing)
+filemenu.add_command(label="Close",command = nothing)
+filemenu.add_separator()
+filemenu.add_command(label="Save",command = nothing)
+filemenu.add_command(label="Save as",command = nothing)
+filemenu.add_separator()
+filemenu.add_command(label="Close tab",command = nothing)
+filemenu.add_separator()
+filemenu.add_command(label="Exit",command = win.quit)
+
+menubar.add_cascade(label="File",menu = filemenu)
+
+editmenu = Menu(menubar)
+filemenu = Menu(menubar)
+
+filemenu.add_command(label="Undo",command = nothing)
+filemenu.add_command(label="Redo",command = nothing)
+filemenu.add_separator()
+filemenu.add_command(label="Cut",command = nothing)
+filemenu.add_command(label="Copy",command = nothing)
+filemenu.add_command(label="Paste",command = nothing)
+filemenu.add_command(label="Select all",command = nothing)
+filemenu.add_separator()
+filemenu.add_command(label="Exit",command = win.quit)
+
+menubar.add_cascade(label="Edit",menu = filemenu)
+
+
+win.config(menu = menubar)
+
+#mb = Menubutton(win,text='file')
+#mb.grid()
+#mb.menu = Menu(mb)
+#mb['menu'] = mb.menu
+
+#x1 = IntVar()
+#x2 = IntVar()
+
+#mb.menu.add_checkbutton(label='open',variable=x1)
+#mb.menu.add_checkbutton(label='close',variable=x2)
+
+#mb.pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#W I N D O W  C O N F I G
+
+#def hello():
+    #messagebox.showinfo('from computer','hey there!')
+#b = Button(win,text = 'click pls',command = hello)
+#b.pack()
 
 
 #win.title("first")
@@ -27,13 +102,6 @@ b.pack()
 #lb.insert(5,'ruby')
 
 #lb.pack()
-
-
-
-
-
-
-
 
 
 
@@ -56,24 +124,7 @@ b.pack()
 #gb.pack(side=LEFT)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#C A N V A S
 
 
 #l1 = Label(win,text="First Number")
@@ -105,12 +156,7 @@ b.pack()
 #button.grid(row=3,column=0)
 
 
-
-
-
-
-
-
+#B U T T O N S
 
 
 #l = Label(win,text='username')
@@ -143,13 +189,7 @@ b.pack()
 #r3.pack()
 
 
-
-
-
-
-
-
-
+#W I N D O W
 
 
 #win.geometry("800x600")
