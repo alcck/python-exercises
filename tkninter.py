@@ -5,21 +5,45 @@ from tkinter import messagebox
 
 win = Tk()
 
+#G E O M E T R Y
+
+#b = 0
+#for i in range(6):
+    #for j in range(6):
+        #b = b+1
+        #Button(win, text=str(b),borderwidth=1).grid(row=1,column=1)
+
+l1 = Label(win,text='Maths')
+l1.place(x=10,y=10)
+
+e1 = Entry(win,bd=5)
+e1.place(x=60,y=10)
+
+l2 = Label(win,text='English')
+l2.place(x=10,y=60)
+
+e2 = Entry(win,bd=5)
+e2.place(x=60,y=60)
+
+b = Button(win,text='submit')
+b.place(x=100,y=100)
+
+
 #P A N N E D  W I N D O W
 
-pw = PanedWindow()
-pw.pack(fill=BOTH,expand = 1)
+#pw = PanedWindow()
+#pw.pack(fill=BOTH,expand = 1)
 
-left = Entry(pw,bd=5)
-pw.add(left)
+#left = Entry(pw,bd=5)
+#pw.add(left)
 
-pw2 = PanedWindow(pw,orient=VERTICAL)
-pw.add(pw2)
+#pw2 = PanedWindow(pw,orient=VERTICAL)
+#pw.add(pw2)
 
-top = Scale(pw2,orient=HORIZONTAL)
-pw2.add(top)
-button = Button(pw2,text="OK")
-pw2.add(button)
+#top = Scale(pw2,orient=HORIZONTAL)
+#pw2.add(top)
+#button = Button(pw2,text="OK")
+#pw2.add(button)
 
 
 #S C R O L L  W I D G E T S
