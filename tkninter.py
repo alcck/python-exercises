@@ -5,6 +5,23 @@ from tkinter import messagebox
 
 win = Tk()
 
+#P A N N E D  W I N D O W
+
+pw = PanedWindow()
+pw.pack(fill=BOTH,expand = 1)
+
+left = Entry(pw,bd=5)
+pw.add(left)
+
+pw2 = PanedWindow(pw,orient=VERTICAL)
+pw.add(pw2)
+
+top = Scale(pw2,orient=HORIZONTAL)
+pw2.add(top)
+button = Button(pw2,text="OK")
+pw2.add(button)
+
+
 #S C R O L L  W I D G E T S
 
 #s = Scale(win)
@@ -13,15 +30,15 @@ win = Tk()
 #sb = Spinbox(win,from_=0,to=10)
 #sb.pack()
 
-scrollbar = Scrollbar(win)
-scrollbar.pack(side=RIGHT,fill=Y)
+#scrollbar = Scrollbar(win)
+#scrollbar.pack(side=RIGHT,fill=Y)
 
-list = Listbox(win, yscrollcommand=scrollbar.set)
+#list = Listbox(win, yscrollcommand=scrollbar.set)
 
-for line in range(100):
-    list.insert(END,'This is line no ' + str(line))
+#for line in range(100):
+    #list.insert(END,'This is line no ' + str(line))
 
-list.pack(side=LEFT,fill=BOTH)
+#list.pack(side=LEFT,fill=BOTH)
 
 
 #M E N U S
