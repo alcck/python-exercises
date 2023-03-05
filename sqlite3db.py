@@ -6,4 +6,5 @@ def createtable():
     cur.execute("CREATE TABLE data(rollno INTEGER, name TEXT, marks REAL)")
     conn.commit()
     conn.close()
+
 createtable()
