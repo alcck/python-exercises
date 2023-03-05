@@ -7,4 +7,14 @@ def createtable():
     conn.commit()
     conn.close()
 
-createtable()
+#createtable()
+
+def insert(roll, nam, mark):
+    conn = sqlite3.connect("lite.db ")
+    cur = conn.cursor()
+    cur.execute("INSERT INTO data VALUES(?,?,?)",(roll,nam,mark))
+    conn.commit()
+    conn.close()
+
+insert(1,'capybara',100)
+insert(2,'duck',150)
