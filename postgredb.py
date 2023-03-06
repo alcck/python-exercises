@@ -35,7 +35,6 @@ def delete(roll):
     conn.commit()
     conn.close()
 
-
 #delete(2)
 #print(view())
 
